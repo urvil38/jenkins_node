@@ -73,7 +73,7 @@ env.DOCKERHUB_USERNAME = 'urvil38'
           do
             STATUS=$(docker service inspect --format '{{ .UpdateStatus.State }}' jenkins_node)
             if [[ "$STATUS" != "updating" ]]; then
-              docker run --rm -v ${WORKSPACE}:/code --network jenkins_node jenkins_node npm test
+              docker run --rm -v ${WORKSPACE}:/code --network jenkins_node ${DOCKERHUB_USERNAME}/jenkins_node:${BUILD_NUMBER} npm test
               break
             fi
             sleep 10s
