@@ -39,7 +39,7 @@ env.DOCKERHUB_USERNAME = 'urvil38'
       try {
         sh "docker rm -f jenkins_node || true"
         sh "docker run -d -p 8080:8080 --name=jenkins_node ${DOCKERHUB_USERNAME}/jenkins_node:${BUILD_NUMBER}"
-        sh "docker run --rm -v ${WORKSPACE}:/code ${DOCKERHUB_USERNAME}/jenkins_node:${BUILD_NUMBER} npm start"
+        sh "docker run --rm ${DOCKERHUB_USERNAME}/jenkins_node:${BUILD_NUMBER} npm start"
 
       } catch(e) {
         error "Staging failed"
