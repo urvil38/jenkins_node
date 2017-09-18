@@ -4,7 +4,7 @@ env.DOCKERHUB_USERNAME = 'urvil38'
     checkout scm
 
     stage("Unit Test") {
-      sh "docker run --rm -w /code -v ${WORKSPACE}:/code mhart/alpine-node npm i && npm test"
+      sh "docker run --rm -w /code -v ${WORKSPACE}:/code mhart/alpine-node sh -c \"npm i; npm test\""
     }
     stage("Integration Test") {
       try {
