@@ -3,7 +3,7 @@ var expressHandlebars  = require('express-handlebars');
 var logger = require('morgan');
 
 var LINES = [
-    "Hey, now, you're an All Star, get your game on, go play",
+    "If you're going through hell, keep going",
     "Hey, now, you're a Rock Star, get the show on, get paid",
     "And all that glitters is gold",
     "Only shooting stars break the mold",
