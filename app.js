@@ -24,7 +24,7 @@ app.get('/', function(req, res) {
         lineIndex = 0;
     }
 
-    res.render('inde', {message: message});
+    res.render('index', {message: message});
 });
 
 module.exports = app
